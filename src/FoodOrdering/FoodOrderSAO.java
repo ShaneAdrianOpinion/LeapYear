@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class FoodOrderingSystem extends JFrame{
+public class FoodOrderingSystem extends JFrame {
     private JPanel panel1;
     private JCheckBox cPizza;
     private JRadioButton rbNone;
@@ -17,18 +17,6 @@ public class FoodOrderingSystem extends JFrame{
     private JRadioButton rb5;
     private JRadioButton rb10;
     private JRadioButton rb15;
-
-    private FoodOrderingSystem() {
-        btnOrder.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                orderFood();
-            }
-        });
-    }
-
-    public void orderFood() {
-    }
 
     public static void main(String[] args) {
         FoodOrderingSystem app = new FoodOrderingSystem();
