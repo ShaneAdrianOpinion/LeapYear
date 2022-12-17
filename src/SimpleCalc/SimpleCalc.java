@@ -12,6 +12,20 @@ public class SimpleCalc extends JFrame {
     private JTextField tfNumber2;
     private JTextField lblResult;
 
+    public SimpleCalc(){
+
+        btnCompute.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                OpCompute();
+            }
+        });
+    }
+
+    private void OpCompute() {
+    }
+
+
     public static void main(String[] args) {
         SimpleCalc app = new SimpleCalc();
         app.setContentPane(app.panel1);
