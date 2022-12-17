@@ -18,6 +18,18 @@ public class FoodOrderingSystem extends JFrame {
     private JRadioButton rb10;
     private JRadioButton rb15;
 
+    public FoodOrderingSystem() {
+        btnOrder.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                orders();
+            }
+        });
+    }
+
+    private void orders() {
+    }
+
     public static void main(String[] args) {
         FoodOrderingSystem app = new FoodOrderingSystem();
         app.setContentPane(app.panel1);
