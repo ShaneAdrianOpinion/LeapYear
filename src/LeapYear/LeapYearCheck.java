@@ -20,22 +20,35 @@ public class LeapYearCheck extends JFrame{
     private void yearCheck() {
         double yearInput = Double.parseDouble(tfYear.getText());
         boolean leap;
-        if (yearInput % 4 == 0) {
-            if (yearInput % 100 == 0) {
-                leap = yearInput % 400 == 0;
-            } else {
-                leap = true;
-            }
-        } else {
-            leap = false;
-        }
 
-        if (leap) {
-            JOptionPane.showMessageDialog(panel1, "Leap Year");
-        } else {
-            JOptionPane.showMessageDialog(panel1, "Not a Leap Year");
+        try {
+            if (tfYear.getText().equals("")) {
+                throw new IllegalArgumentException("Empty String!");
+            }
+            if (yearInput < 0) {
+                throw new IllegalArgumentException("Input is invalid!");
+            }
+
+            if (yearInput % 4 == 0) {
+                if (yearInput % 100 == 0) {
+                    leap = yearInput % 400 == 0;
+                } else {
+                    leap = true;
+                }
+            } else {
+                leap = false;
+            }
+
+            if (leap) {
+                JOptionPane.showMessageDialog(panel1, "This is a Leap Year");
+            } else {
+                JOptionPane.showMessageDialog(panel1, "This is not a Leap Year");
+            }
+            tfYear.setText("");
+
+        } catch (IllegalArgumentException e) {
+            JOptionPane.showMessageDialog(null, "Invalid Input!");
         }
-        tfYear.setText("");
     }
 
     public static void main(String[] args) {
